@@ -16,6 +16,7 @@ import Study from './App/Components/Study';
 import Tests from './App/Components/Tests';
 import FlashCards from './App/Components/FlashCards';
 import History from './App/Components/History';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 var base64Icon = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAQAAACSR7JhAAADtUlEQVR4Ac3YA2Bj
 6QLH0XPT1Fzbtm29tW3btm3bfLZtv7e2ObZnms7d8Uw098tuetPzrxv8wiISrtVudrG2JXQZ4VOv+qUfmqCGGl1mqLhoA52oZlb0mr
@@ -44,6 +45,7 @@ class AgileCert extends Component {
           <TabBarIOS selectedTab={this.state.selectedTab}>
             <TabBarIOS.Item
               selected={this.state.selectedTab === 'tests'}
+              title="Tests"
               icon={{uri: base64Icon, scale: 3}}
               onPress={() => {
                   this.setState({
@@ -54,6 +56,7 @@ class AgileCert extends Component {
             </TabBarIOS.Item>
             <TabBarIOS.Item
               selected={this.state.selectedTab === 'study'}
+              title="Study"
               icon={{uri: base64Icon, scale: 3}}
               onPress={() => {
                     this.setState({
@@ -64,6 +67,7 @@ class AgileCert extends Component {
             </TabBarIOS.Item>
             <TabBarIOS.Item
               selected={this.state.selectedTab === 'flashcards'}
+              title="FlashCards"
               icon={{uri: base64Icon, scale: 3}}
               onPress={() => {
                     this.setState({
@@ -74,6 +78,7 @@ class AgileCert extends Component {
             </TabBarIOS.Item>
             <TabBarIOS.Item
               selected={this.state.selectedTab === 'history'}
+              title="History"
               icon={{uri: base64Icon, scale: 3}}
               onPress={() => {
                     this.setState({
