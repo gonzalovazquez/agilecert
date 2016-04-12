@@ -5,8 +5,42 @@ var {
   StyleSheet,
   View,
   Text,
-  Component
+  Component,
+  ScrollView
 } = React;
+
+var MOCKED_DATA = [
+  {
+    "_id": "56febce9e4b0a5888e2e9b5a",
+    "name": "In Agile Manifesto, what is more valuable than process & tools?",
+    "choices": [
+      {
+        "id": 1,
+        "title": "Customer Collaboration",
+        "description": "Customer are important",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "title": "Individuals & Interactions",
+        "description": "Individuals are important",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "title": "Working Software",
+        "description": "Working are important",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "title": "Responding to change",
+        "description": "Responding are important",
+        "correct": false
+      }
+    ]
+  }
+];
 
 var styles = StyleSheet.create({
   description: {
@@ -15,21 +49,33 @@ var styles = StyleSheet.create({
     color: '#FFFFFF'
   },
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#765431',
+    flex: 1
   }
 });
 
 class Study extends Component {
   render() {
+    var questions = MOCKED_DATA.map((item, index) => {
+      var items = item.choices.map((item2, index2) => {
+        console.log(item.name);
+        console.log(item.choices[index2].title);
+        return(
+            <View key={index2}>
+              <Text> - {item.choices[index2].title}</Text>
+            </View>
+        );
+      });
+      return(
+        <View key={index}>
+            <Text>{item.name}</Text>
+            {items}
+        </View>
+      );
+    });
     return (
-      <View style={styles.container}>
-        <Text style={styles.description}>
-          Hello from Study
-        </Text>
-      </View>
+      <ScrollView style={styles.container}>
+        {questions}
+      </ScrollView>
     );
   }
 }
