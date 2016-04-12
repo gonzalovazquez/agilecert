@@ -1,6 +1,8 @@
 'use strict';
 
 var React = require('react-native');
+var Separator = require('./Helpers/Separator');
+
 var {
   StyleSheet,
   View,
@@ -12,6 +14,66 @@ var {
 var MOCKED_DATA = [
   {
     "_id": "56febce9e4b0a5888e2e9b5a",
+    "name": "In Agile Manifesto, what is more valuable than process & tools?",
+    "choices": [
+      {
+        "id": 1,
+        "title": "Customer Collaboration",
+        "description": "Customer are important",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "title": "Individuals & Interactions",
+        "description": "Individuals are important",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "title": "Working Software",
+        "description": "Working are important",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "title": "Responding to change",
+        "description": "Responding are important",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "_id": "56fec55de4b0a5888e2e9c58",
+    "name": "In Agile Manifesto, what is more valuable than process & tools?",
+    "choices": [
+      {
+        "id": 1,
+        "title": "Customer Collaboration",
+        "description": "Customer are important",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "title": "Individuals & Interactions",
+        "description": "Individuals are important",
+        "correct": true
+      },
+      {
+        "id": 3,
+        "title": "Working Software",
+        "description": "Working are important",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "title": "Responding to change",
+        "description": "Responding are important",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "_id": "56fec572e4b0a5888e2e9c5b",
     "name": "In Agile Manifesto, what is more valuable than process & tools?",
     "choices": [
       {
@@ -69,6 +131,7 @@ class Study extends Component {
         <View key={index}>
             <Text>{item.name}</Text>
             {items}
+            <Separator />
         </View>
       );
     });
